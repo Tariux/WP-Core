@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
-import en from "../locales/en.json";
-import fa from "../locales/fa.json";
+import en from "../../locales/en.json";
+import fa from "../../locales/fa.json";
 const translations = {
   en,
   fa,

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { SettingsContext } from "../../context/SettingsContext";
-import SelectPage from "../components/SelectPage";
+import SelectPage from "../../components/SelectPage";
 
 export default function DeletePage() {
   const { lang, theme } = useContext(SettingsContext);

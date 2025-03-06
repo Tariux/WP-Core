@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { SettingsContext } from "../../context/SettingsContext";
+import { SettingsContext } from "../context/SettingsContext";
 export default function Settings() {
   const { language, setLanguage, theme, setTheme, lang } = useContext(SettingsContext);
 
