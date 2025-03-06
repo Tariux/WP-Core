@@ -1,0 +1,43 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Plural-Forms: nplurals = 1; plural = 0;\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "hello_world"
+msgstr "سلام دنیا!"
+
+msgid "welcome_message"
+msgstr "به وب سایت ما خوش آمدید"
+
+msgid "dashboard"
+msgstr "پیشخوان"
+
+msgid "settings"
+msgstr "پیکربندی"
+
+msgid "login"
+msgstr "ورود" 
+
+msgid "home"
+msgstr "صفحه اصلی"
+
+msgid "theme"
+msgstr "قالب"
+
+msgid "the_box"
+msgstr "باکس"
+
+msgid "version"
+msgstr "نسخه"
+
+msgid "dark"
+msgstr "تیره"
+
+msgid "light"
+msgstr "روشن"
+
+msgid "language"
+msgstr "زبان"

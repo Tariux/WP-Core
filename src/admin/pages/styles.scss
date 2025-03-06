@@ -1,0 +1,121 @@
+$background-color: #1c1c1e;
+$border-color: #e2e8f0;
+$text-color: #1a202c;
+$muted-color: #64748b;
+$success-color: #22c55e;
+$info-color: #3b82f6;
+$red: #ef4444;
+$yellow: #f59e0b;
+$green: #22c55e;
+
+.debug-page {
+    height: 100%;
+}
+
+.terminal {
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid $border-color;
+  background-color: $background-color;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.terminal-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-bottom: 1px solid $border-color;
+  padding: 1rem;
+}
+
+.terminal-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.terminal-button {
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 9999px;
+  
+  &.red {
+    background-color: $red;
+  }
+  
+  &.yellow {
+    background-color: $yellow;
+  }
+  
+  &.green {
+    background-color: $green;
+  }
+}
+
+.terminal-content {
+  padding: 1rem;
+}
+
+.terminal-code {
+  display: grid;
+  gap: 0.25rem;
+  overflow: auto;
+  font-size: 0.875rem;
+  font-weight: normal;
+  letter-spacing: -0.025em;
+  background-color: $background-color;
+
+  * {
+    font-family: monospace;
+  }
+}
+
+// Animation components
+.animated-span {
+  display: grid;
+  font-size: 0.875rem;
+  font-weight: normal;
+  letter-spacing: -0.025em;
+  opacity: 0;
+  transform: translateY(-5px);
+  animation: fadeIn 0.3s forwards;
+}
+
+.typing-animation {
+  font-size: 0.875rem;
+  font-weight: normal;
+  letter-spacing: -0.025em;
+}
+
+// Utility classes
+.success {
+  color: $success-color;
+}
+
+.info {
+  color: $info-color;
+}
+
+.muted {
+  color: $muted-color;
+}
+
+.indented {
+  padding-left: 0.5rem;
+}
+
+// Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

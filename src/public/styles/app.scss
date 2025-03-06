@@ -1,0 +1,64 @@
+.the-box-root-app {
+    display: flex;
+    font-family: Arial, sans-serif;
+  
+    .sidebar {
+      width: 200px;
+      background: #f1f1f1;
+      padding: 20px;
+  
+      h3 {
+        margin-bottom: 20px;
+      }
+  
+      ul {
+        list-style: none;
+        padding: 0;
+  
+        li {
+          margin-bottom: 10px;
+  
+          a {
+            text-decoration: none;
+            color: #333;
+  
+            &:hover {
+              color: #0073aa;
+            }
+          }
+        }
+      }
+    }
+  
+    .content {
+      flex: 1;
+      padding: 20px;
+  
+      h2 {
+        margin-bottom: 20px;
+      }
+  
+      form {
+        label {
+          display: block;
+          margin-bottom: 10px;
+  
+          input {
+            margin-left: 10px;
+          }
+        }
+  
+        button {
+          background: #0073aa;
+          color: #fff;
+          border: none;
+          padding: 10px 20px;
+          cursor: pointer;
+  
+          &:hover {
+            background: #005177;
+          }
+        }
+      }
+    }
+  }

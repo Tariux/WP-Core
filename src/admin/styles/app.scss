@@ -1,0 +1,436 @@
+// app.scss
+
+// Color Variables
+$primary-color: #212224; // Accent blue similar to Apple's accent color
+
+// Light Theme Colors
+$background-color: #f5f5f7;
+$sidebar-bg: #ffffff;
+$sidebar-border: #d1d1d6;
+$text-color: #1c1c1e;
+$text-muted: #8e8e93;
+$active-bg: #e5e5ea;
+
+// Dark Theme Colors
+$dark-background: #1c1c1e;
+$dark-sidebar-bg: #2c2c2e;
+$dark-sidebar-border: #3a3a3c;
+$dark-text-color: #ffffff;
+$dark-text-muted: #b0b0b5;
+// For dark mode active state, use the accent color for a vibrant contrast
+$dark-active-bg: $primary-color;
+
+// Spacing & Transitions
+$transition-speed: 0.2s;
+
+// Main Dashboard Layout
+.the_box-admin-dashboard {
+  display: flex;
+  height: 85vh;
+  overflow: hidden;
+  margin: 0;
+  background-color: $background-color;
+  transition: background-color $transition-speed ease;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 20px;
+  margin-left: 0;
+  border-radius: 12px;
+
+  * {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  }
+}
+.the_box-admin-sidebar {
+  width: 260px;
+  background-color: $sidebar-bg;
+  border-right: 1px solid $sidebar-border;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  transition: width $transition-speed ease, padding $transition-speed ease;
+
+
+  &.collapsed {
+    width: 80px;
+    padding: 30px 0px;
+
+
+    
+    .the_box-admin-sidebar__title {
+      justify-content: center;
+    } 
+
+    .the_box-admin-nav-item {
+      justify-content: center;
+      border-radius: 0 !important;
+      svg {
+        margin-right: 0;
+      }
+    }
+  }
+
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .sidebar-toggle {
+      background: none;
+      border: none;
+      color: $text-color;
+      cursor: pointer;
+      transition: background-color $transition-speed ease;
+      &:hover {
+        background-color: $active-bg;
+      }
+    }
+
+    .the_box-admin-sidebar__title {
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      gap: 10px;
+      font-weight: bold;
+      color: $text-color;
+      transition: color $transition-speed ease;
+      margin: 0;
+
+      svg {
+        path {
+          fill: #111111;
+        }
+      }
+    }
+  }
+
+  .the_box-admin-user-info {
+    font-size: 0.875rem;
+    color: $text-muted;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    
+    span:first-child {
+      font-weight: 500;
+    }
+  }
+
+  .the_box-admin-navigation {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    
+    .the_box-admin-nav-item {
+      display: flex;
+      align-items: center;
+      padding: 12px 15px;
+      margin-bottom: 5px;
+      color: $text-color;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color $transition-speed ease, color $transition-speed ease;
+      outline: none;
+
+      svg {
+        margin-right: 10px;
+        font-size: 1.2rem;
+      }
+
+      &:hover {
+        background-color: $active-bg;
+      }
+
+      &.active {
+        background-color: $active-bg;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+// Main Content Area Styling
+.the_box-admin-main-content {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+  background-color: $background-color;
+  color: $text-color;
+  transition: background-color $transition-speed ease, color $transition-speed ease;
+
+  h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0;
+    color: inherit; // Inherit current text color
+  }
+}
+
+// RTL Support
+[dir="rtl"] {
+  .the_box-admin-sidebar {
+    border-right: none;
+    border-left: 1px solid $sidebar-border;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .the_box-admin-nav-item svg {
+    margin-right: 0;
+    margin-left: 10px;
+  }
+}
+
+// Settings Page Styles
+.the_box-admin-settings {
+  .settings-section {
+    margin-bottom: 2rem;
+
+    h2 {
+      color: $text-color;
+    }
+  }
+
+  .settings-select {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid $sidebar-border;
+    min-width: 200px;
+  }
+}
+
+
+
+.the_box-read-page {
+  &__select-container {
+    margin-bottom: 2rem;
+  }
+
+  &__select {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.75rem;
+    border: 1px solid $sidebar-border;
+    border-radius: 8px;
+    background-color: $sidebar-bg;
+    color: $text-color;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all $transition-speed ease;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      box-shadow: 0 0 0 2px rgba($primary-color, 0.1);
+    }
+  }
+
+  &__content {
+    background-color: $sidebar-bg;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: $text-color;
+  }
+
+  &__subtitle {
+    font-size: 1.4rem;
+    color: $text-color;
+  }
+
+  &__text {
+    color: $text-color;
+    line-height: 1.6;
+  }
+
+  .the_box-loading {
+    padding: 2rem;
+    text-align: center;
+    color: $text-muted;
+  }
+}
+
+
+// Dark Theme
+body.dark {
+  .the_box-read-page {
+    &__select {
+      background-color: $dark-sidebar-bg;
+      color: $dark-text-color;
+      border-color: $dark-sidebar-border;
+
+      &:focus {
+        border-color: lighten($primary-color, 10%);
+        box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+      }
+    }
+
+    &__content {
+      background-color: $dark-sidebar-bg;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    &__title,
+    &__subtitle,
+    &__text {
+      color: $dark-text-color;
+    }
+
+    .the_box-loading {
+      color: $dark-text-muted;
+    }
+  }
+
+  .the_box-admin-dashboard {
+    background-color: $dark-background;
+  }
+
+  .the_box-admin-sidebar {
+    background-color: $dark-sidebar-bg;
+    border-color: $dark-sidebar-border;
+    
+    &__header {
+      .the_box-admin-sidebar__title {
+        color: $dark-text-color;
+
+        svg {
+          path {
+            fill: #fff;
+          }
+        }
+
+      }
+    }
+
+    .the_box-admin-user-info {
+      color: $dark-text-muted;
+    }
+
+    .the_box-admin-nav-item {
+      color: $dark-text-color;
+
+      &:hover {
+        background-color: lighten($dark-active-bg, 10%);
+      }
+      
+      &.active {
+        background-color: $dark-active-bg;
+        color: #fff;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .the_box-admin-main-content {
+    background-color: $dark-background;
+    color: $dark-text-color;
+
+    h1 {
+      // Ensure h1 text is clearly visible in dark mode
+      color: $dark-text-color;
+    }
+  }
+
+  .the_box-admin-settings {
+    .settings-section {
+      h2 {
+        color: $dark-text-color;
+      }
+    }
+    .settings-select {
+      background-color: $dark-sidebar-bg;
+      color: $dark-text-color;
+      border-color: $dark-sidebar-border;
+    }
+  }
+}
+
+
+.the_box-create-page {
+  padding: 2rem;
+  transition: background-color $transition-speed ease;
+
+  &.dark {
+    background-color: $dark-background;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: $text-color;
+    margin-bottom: 2rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    border: 1px solid $sidebar-border;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+    color: $text-color;
+    background-color: $sidebar-bg;
+    transition: border-color $transition-speed ease, box-shadow $transition-speed ease;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      box-shadow: 0 0 0 2px lighten($primary-color, 40%);
+    }
+  }
+
+  &__button {
+    align-self: flex-start;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: $primary-color;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color $transition-speed ease;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+// Dark Theme
+body.dark {
+  .the_box-create-page {
+    background-color: $dark-background;
+
+    &__title {
+      color: $dark-text-color;
+    }
+
+    &__input,
+    &__textarea {
+      color: $dark-text-color;
+      background-color: $dark-sidebar-bg;
+      border-color: $dark-sidebar-border;
+    }
+
+    &__button {
+      background-color: $dark-active-bg;
+
+      &:hover {
+        background-color: lighten($dark-active-bg, 10%);
+      }
+    }
+  }
+}
