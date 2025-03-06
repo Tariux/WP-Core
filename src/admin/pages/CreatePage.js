@@ -8,7 +8,7 @@ export default function CreatePage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://192.168.1.10/wordpress/wp-json/the-box-admin/v1/pages", {
+    fetch("http://localhost/wordpress/wp-json/the-box-admin/v1/pages", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
