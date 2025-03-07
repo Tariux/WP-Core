@@ -36,11 +36,22 @@ export default function DashboardPanel() {
         <Routes>
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           {dashboardPages.map((page) => (
-            <Route
-              key={page.slug}
-              path={`/${page.slug}`}
-              element={<page.component />}
-            />
+            <React.Fragment key={`page-${page.slug}`}>
+              {page.slug && page.component && (
+                <Route
+                  key={`route-${page.slug}`}
+                  path={`/${page.slug}`}
+                  element={<page.component />}
+                />
+              )}
+              {page.submenu && page.submenu.map((submenu) => (
+                <Route
+                  key={`submenu-${submenu.slug}`}
+                  path={`/${submenu.slug}`}
+                  element={<submenu.component />}
+                />
+              ))}
+            </React.Fragment>
           ))}
         </Routes>
       </DashboardLayout>

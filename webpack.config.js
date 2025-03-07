@@ -15,7 +15,7 @@ module.exports = (env, argv) => {
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: isProduction ? 'js/[name].[contenthash].js' : 'js/[name].js', // Optional: Add contenthash for production cache busting
+      filename: isProduction ? 'js/[name].js' : 'js/[name].js', 
       publicPath: mode === 'development' || env.target ? '/' : './',
       globalObject: 'this',
     },
@@ -70,7 +70,7 @@ module.exports = (env, argv) => {
       // Only use CleanWebpackPlugin in production
       ...(isProduction ? [new CleanWebpackPlugin()] : []),
       new MiniCssExtractPlugin({
-        filename: isProduction ? 'css/[name].[contenthash].css' : 'css/[name].css', // Optional: Add contenthash for production
+        filename: isProduction ? 'css/[name].css' : 'css/[name].css',
       }),
       new HtmlWebpackPlugin({
         template: './src/admin/index.html',

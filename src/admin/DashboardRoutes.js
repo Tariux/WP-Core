@@ -13,46 +13,47 @@ const DashboardRoutes = (util) => {
   return [
     {
       title: util.lang["dashboard"],
-      slug: "dashboard" || "Dashboard",
-      icon: "map",
+      slug: "dashboard",
+      icon: "home",
       component: Landing,
       // description: util.lang['dashboard_page_desc']
     },
     {
       title: util.lang["settings"] || "Settings",
       slug: "settings",
-      icon: "map",
+      icon: "settings",
       component: Settings,
     },
     {
       title: util.lang["pages"] || "Pages",
-      slug: "pages",
       icon: "map",
-      component: ListPages,
-    },
-    {
-      title: util.lang["create_page"] || "Create Page",
-      slug: "create_page",
-      icon: "map",
-      component: CreatePage,
-    },
-    {
-      title: util.lang["read_page"] || "Read Page",
-      slug: "read_page",
-      icon: "map",
-      component: ReadPage,
-    },
-    {
-      title: util.lang["update_page"] || "Update Page",
-      slug: "update_page",
-      icon: "map",
-      component: UpdatePage,
-    },
-    {
-      title: util.lang["delete_page"] || "Delete Page",
-      slug: "delete_page",
-      icon: "map",
-      component: DeletePage,
+      submenu: [
+        {
+          title: util.lang["create_page"] || "Create Page",
+          slug: "create_page",
+          component: CreatePage,
+        },
+        {
+          title: util.lang["pages"] || "Pages",
+          slug: "list_pages",
+          component: ListPages,
+        },
+        {
+          title: util.lang["read_page"] || "Read Page",
+          slug: "read_page",
+          component: ReadPage,
+        },
+        {
+          title: util.lang["update_page"] || "Update Page",
+          slug: "update_page",
+          component: UpdatePage,
+        },
+        {
+          title: util.lang["delete_page"] || "Delete Page",
+          slug: "delete_page",
+          component: DeletePage,
+        },
+      ]
     },
     {
       title: util.lang["debug_page"] || "Debug",
